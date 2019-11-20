@@ -53,16 +53,7 @@ resource "aws_autoscaling_group" "main" {
 
       override {
         instance_type = "${var.instance_type_spot[1]}"
-      }
-
-      override {
-        instance_type = "${var.instance_type_spot[2]}"
-      }
-     
-      override {
-        instance_type = "${var.instance_type_spot[3]}"
-      }
-        
+      }   
     }
   }
 
