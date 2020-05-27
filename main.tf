@@ -13,9 +13,9 @@ resource "aws_launch_template" "main" {
   block_device_mappings {
     device_name = "/dev/sda1"
     ebs {
-      volume_size = 15
+      volume_size = "${var.root_volume_size}"
       volume_type = "io1"
-      iops = "300"
+      iops = "${root_volume_iops}"
     }
   }
 }
@@ -48,12 +48,8 @@ resource "aws_autoscaling_group" "main" {
       }
       
       override {
-        instance_type = "${var.instance_type_spot[0]}"
+        instance_type = "${var.instance_type_spot}"
       }
-
-      override {
-        instance_type = "${var.instance_type_spot[1]}"
-      }   
     }
   }
 

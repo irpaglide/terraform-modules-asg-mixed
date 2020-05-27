@@ -32,7 +32,7 @@ variable "on_demand_percentage_above_base_capacity" {
 
 
 variable "instance_type_spot" {
-  default = ["c4.xlarge","m4.xlarge","m4.2xlarge","c4.2xlarge"]
+  default = "c4.xlarge"
 }
 
 variable "user_data" {
@@ -89,4 +89,12 @@ variable "block_device_mappings" {
 }
 variable "min_elb_capacity" {
   default = "1"
+}
+
+variable "root_volume_size" {
+  default = "30"
+}
+
+variable "root_volume_iops" {
+  default = "300"
 }
