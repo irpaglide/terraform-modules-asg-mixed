@@ -32,7 +32,7 @@ resource "aws_autoscaling_group" "main" {
   health_check_type = "${var.health_check_type}"
   force_delete = "${var.force_delete}"
   target_group_arns = ["${var.target_group_arns}"]
-  wait_for_capacity_timeout = "${var.wait_timeout}s"
+  wait_for_capacity_timeout = "${var.wait_timeouts}"
   tags = ["${var.tags}"]
   mixed_instances_policy = {
     instances_distribution = {
