@@ -18,6 +18,7 @@ resource "aws_launch_template" "main" {
       iops = "${var.root_volume_iops}"
   }
 }
+}
 
 
 resource "aws_autoscaling_group" "main" {
