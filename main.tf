@@ -15,8 +15,7 @@ resource "aws_launch_template" "main" {
     ebs {
       volume_size = "${var.root_volume_size}"
       volume_type = "io1"
-      iops = "${root_volume_iops}"
-    }
+      iops = "${var.root_volume_iops}"
   }
 }
 
